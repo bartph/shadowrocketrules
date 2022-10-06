@@ -3,7 +3,9 @@ let SkinUrl = "https://cat-match.easygame2021.com/sheep/v1/game/skin/info?";
 let TopUrl = "https://cat-match.easygame2021.com/sheep/v1/game/topic/game_start?";
 let DailyUrl = "https://cat-match.easygame2021.com/sheep/v1/game/map_info_ex?matchType=3";
 let url = "https://cat-match.easygame2021.com/sheep/v1/game/skin/info?";
+console.log(url);
 let body = $response.body;
+console.log(body);
 switch (url)
 {
     case SkinUrl:Skinaction(body);
