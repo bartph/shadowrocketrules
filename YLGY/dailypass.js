@@ -1,4 +1,5 @@
 // ^https?:\/\/cat-match.easygame2021.com/sheep/v1/game/.*(matchType=3|game_start\?|skin\/info\?)
+// 自动获取所有皮肤,调低第二关难度
 let SkinUrl = "https://cat-match.easygame2021.com/sheep/v1/game/skin/info?";
 let TopUrl = "https://cat-match.easygame2021.com/sheep/v1/game/topic/game_start?";
 let DailyUrl = "https://cat-match.easygame2021.com/sheep/v1/game/map_info_ex?matchType=3";
@@ -27,7 +28,11 @@ function Skinaction(body) {
 	let status = $response.status;
 	if(status == 200){
  	let obj = JSON.parse(body);
-	obj.data.skin_list = [{"id":1},{"id":2},{"id":3},{"id":4},{"id":5}];
+	obj.data.skin_list = [];
+	for (var i=0;i<61;i++)
+{ 
+	obj.data.skin_list.push({"id":i});
+}
 	$done({body: JSON.stringify(obj)});
 }  else $done({});
 }
