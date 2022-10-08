@@ -1,1 +1,3 @@
-
+AdsRule是搜集的Rule去广告规则
+AdsScript是搜集的重写和script去广告规则
+youtube.js也是来源网络大神.
