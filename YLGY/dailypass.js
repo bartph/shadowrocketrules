@@ -16,6 +16,7 @@ switch (url)
     break;
     case DailyUrl: gameAction(body);
     break;
+    $notification.post('撸羊失败', '', '游戏数据匹配失败…');
     default: $done({});
 }
 function gameAction(body) {
