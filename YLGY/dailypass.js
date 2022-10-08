@@ -20,6 +20,7 @@ switch (url)
     //default: $done({});
 }
 function gameAction(body) {
+$notification.post('进来撸', '', status);
 	if(status == 200){
  	let obj = JSON.parse(body);
 	obj.data.map_seed = [0,0,0,0];
