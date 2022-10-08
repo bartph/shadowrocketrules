@@ -6,21 +6,23 @@ let DailyUrl = "https://cat-match.easygame2021.com/sheep/v1/game/map_info_ex?mat
 let url = $request.url;
 let status = $response.status;
 let body = $response.body;
+$notification.post('撸羊开始执行', '', '分析游戏数据…');
 if (url == SkinUrl)
+switch (url)
 {
-	$notification.post("脚本进入if语句", "皮肤脚本启动", "皮肤脚本启动");
-	skinAction(body);
-}
-else
-{
-	$notification.post("脚本进入if语句", "游戏脚本启动", "游戏脚本启动");
-	gameAction(body);
+    case SkinUrl: skinAction(body);
+    break;
+    case TopUrl: gameAction(body);
+    break;
+    case DailyUrl: gameAction(body);
+    break;
+    default: $done({});
 }
 function gameAction(body) {
 	if(status == 200){
  	let obj = JSON.parse(body);
 	obj.data.map_seed = [0,0,0,0];
-	$notification.post("游戏难度调整完", "游戏难度调整完", "游戏难度调整完");
+	$notification.post('截获羊游戏关卡', '', '修改第二关难度');
 	$done({body: JSON.stringify(obj)});
 }  else $done({});
 }
@@ -32,7 +34,7 @@ function skinAction(body) {
 { 
 	obj.data.skin_list.push({"id":i});
 }
-	$notification.post("皮肤脚本执行完", "皮肤修改完成", "皮肤修改完成");
+	$notification.post('获取所有皮肤', '', '所有皮肤获取完成');
 	$done({body: JSON.stringify(obj)});
 }  else $done({});
 }
