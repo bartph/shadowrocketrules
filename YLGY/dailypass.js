@@ -4,7 +4,7 @@ var DailyUrl = "https://cat-match.easygame2021.com/sheep/v1/game/map_info_ex?mat
 var url = $request.url;
 var body = $response.body;
 var obj = JSON.parse(body);
-$notification.post('撸羊开始执行', '', '分析游戏数据…');
+//$notification.post('撸羊开始执行', '', '分析游戏数据…');
 switch (url)
 {
     case SkinUrl: skinAction(body);
