@@ -33,11 +33,12 @@ function gameAction(body) {
 	$done({body: JSON.stringify(obj)});
 }
 function skinAction(body) {
-    $notification.post('获取所有皮肤', '', '所有皮肤获取完成');
 	obj['data']['skin_list'] = [];
-	for (var i = 0; i < 100; i++)
+	for (var i = 0; i < 200; i++)
 { 
 	obj['data']['skin_list'].push({"id":i});
 }
+
+        $notification.post('获取所有皮肤', '', '所有皮肤获取完成');
 	$done({body: JSON.stringify(obj)});
 }
