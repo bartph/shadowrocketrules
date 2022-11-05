@@ -35,7 +35,7 @@ function gameAction(body) {
 function skinAction(body) {
     $notification.post('获取所有皮肤', '', '所有皮肤获取完成');
 	obj['data']['skin_list'] = [];
-	for (var i = 0; i < 300; i++)
+	for (var i = 0; i < 100; i++)
 { 
 	obj['data']['skin_list'].push({"id":i});
 }
