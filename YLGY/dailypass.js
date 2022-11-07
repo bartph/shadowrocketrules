@@ -38,6 +38,6 @@ function skinAction(body) {
 { 
 	obj['data']['skin_list'].push({"id":i,"created_at":0,"reason":""});
 }
-        $notification.post('获取所有皮肤', '', '所有皮肤获取完成,总数:'+i);
+        $notification.post('获取所有皮肤Y', '', '所有皮肤获取完成,总数:' + i);
 	$done({body: JSON.stringify(obj)});
 }
